@@ -14,7 +14,7 @@ import SnapKit
 
 class MainViewController : UIViewController {
   private let classifier:TextClassifier! = TextClassifier()
-  private let modelName:String = "TextClassifier.mlmodel.gz"
+  private let modelName:String = "TextClassifier.mlmodel"
   
   private lazy var label:UILabel = {
     let label           = UILabel()
