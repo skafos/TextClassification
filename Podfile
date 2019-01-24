@@ -6,7 +6,7 @@ target 'TextClassification' do
   use_frameworks!
 
   pod 'SnapKit'
-  pod 'Skafos', :git => 'https://github.com/MetisMachine/skafos_ios.git', :tag => '0.0.17'
+  pod 'Skafos'
 
 end
 
