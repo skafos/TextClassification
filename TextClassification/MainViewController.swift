@@ -14,7 +14,7 @@ import SnapKit
 
 class MainViewController : UIViewController {
   private let classifier:TextClassifier! = TextClassifier()
-  private let modelName:String = "TextClassifier.mlmodel.gz"
+  private let assetName:String = "TextClassifier"
   
   private lazy var label:UILabel = {
     let label           = UILabel()
@@ -102,10 +102,7 @@ class MainViewController : UIViewController {
      Receive Notification When New Model Has Been Downloaded And Compiled
      ***/
     
-    NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadModel(_:)), name: Skafos.Notifications.modelUpdateNotification(modelName), object: nil)
-    
-    /** Receive Notifications for all model updates  **/
-    //    NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadModel(_:)), name: Skafos.Notifications.modelUpdated, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadModel(_:)), name: Skafos.Notifications.assetUpdateNotification(assetName), object: nil)
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -115,15 +112,17 @@ class MainViewController : UIViewController {
   }
   
   @objc func reloadModel(_ notification:Notification) {
-    debugPrint("Model Reloaded")
-    debugPrint(notification)
-    Skafos.load(self.modelName) { (model) in
-      guard let model = model else {
-        debugPrint("No model available")
+    Skafos.load(asset: assetName, tag:"latest") { (error, asset) in
+      guard error == nil else {
+        debugPrint("Skafos Load error: \(error!)")
         return
       }
       
-      self.classifier.model = model
+      if let model = asset.model {
+        self.classifier.model = model
+      }
+      
+      debugPrint("Assets downloaded: \(asset)")
     }
   }
   
