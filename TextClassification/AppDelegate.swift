@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window = UIWindow(frame: UIScreen.main.bounds)
 
     // Skafos app key is required
-    Skafos.initialize("186e9275287bf77a607ff34a:a73dd145805693ba2a2ea557f01787cb:170")
+    Skafos.initialize("<PUBLISHABLE KEY>")
 
     self.window?.rootViewController = UINavigationController(rootViewController: MainViewController())
     self.window?.makeKeyAndVisible()

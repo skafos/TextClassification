@@ -14,7 +14,7 @@ import SnapKit
 
 class MainViewController : UIViewController {
   private let classifier:TextClassifier! = TextClassifier()
-  private let assetName:String = "TextClassifier.zip"
+  private let assetName:String = "TextClassifier"
   
   private lazy var label:UILabel = {
     let label           = UILabel()
@@ -77,13 +77,13 @@ class MainViewController : UIViewController {
     }
 
     label_explain.snp.makeConstraints { make in
-        make.top.equalTo(field.snp.bottom).offset(30)
+        make.top.equalTo(field.snp.bottom).offset(5)
         make.right.left.equalTo(field)
         make.height.equalTo(125)
     }
 
     button.snp.makeConstraints { make in
-      make.top.equalTo(label_explain.snp.bottom).offset(10)
+      make.top.equalTo(label_explain.snp.bottom)
       make.right.left.equalTo(label_explain).inset(30)
       make.height.equalTo(60)
     }
