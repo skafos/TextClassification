@@ -26,7 +26,7 @@ Before diving in to this example application, make sure you have setup an accoun
 1. Make sure the following capabilites are enabled:
     * Background modes: `Background fetch` and `Remote notifications`
     * Push notifications
-2. Inside `AppDelegate.swift` make sure to use your Skafos project token in: `Skafos.configure`
+2. Inside `AppDelegate.swift` make sure to use your Skafos project token in: `Skafos.initialize`
 
 ## Now What?
 
