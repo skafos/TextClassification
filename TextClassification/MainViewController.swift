@@ -14,7 +14,7 @@ import SnapKit
 
 class MainViewController : UIViewController {
   private let classifier:TextClassifier! = TextClassifier()
-  private let assetName:String = "TextClassifier"
+  private let assetName:String = "TextClassifier.zip"
   
   private lazy var label:UILabel = {
     let label           = UILabel()
@@ -102,6 +102,19 @@ class MainViewController : UIViewController {
      Receive Notification When New Model Has Been Downloaded And Compiled
      ***/
     
+    Skafos.load(asset: assetName, tag:"latest") { (error, asset) in
+      guard error == nil else {
+        debugPrint("Skafos Load error: \(error!)")
+        return
+      }
+      
+      if let model = asset.model {
+        self.classifier.model = model
+      }
+      
+      debugPrint("Assets downloaded: \(asset)")
+    }
+
     NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadModel(_:)), name: Skafos.Notifications.assetUpdateNotification(assetName), object: nil)
   }
   
@@ -112,7 +125,7 @@ class MainViewController : UIViewController {
   }
   
   @objc func reloadModel(_ notification:Notification) {
-    Skafos.load(asset: assetName, tag:"latest") { (error, asset) in
+    Skafos.load(asset: assetName) { (error, asset) in
       guard error == nil else {
         debugPrint("Skafos Load error: \(error!)")
         return
