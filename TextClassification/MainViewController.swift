@@ -2,8 +2,8 @@
 //  MainViewController.swift
 //  TextClassification
 //
-//  Created by Wess Cope on 1/7/19.
-//  Copyright © 2019 io.skafos. All rights reserved.
+//  Created by Skafos.ai on 1/7/19.
+//  Copyright © 2019 Metis Machine, LLC. All rights reserved.
 //
 
 import Foundation
