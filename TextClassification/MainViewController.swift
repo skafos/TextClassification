@@ -93,28 +93,29 @@ class MainViewController : UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     self.view.backgroundColor = .white
-    
     self.title = "Text Classification"
-    
-    /***
-     Receive Notification When New Model Has Been Downloaded And Compiled
-     ***/
-    
-    Skafos.load(asset: assetName, tag:"latest") { (error, asset) in
+
+    // Skafos load cached asset
+    // If you use a tag, Skafos will pull the asset on app load
+    Skafos.load(asset: assetName, tag: "latest") { (error, asset) in
+      // Log the asset in the console
+      console.info(asset)
       guard error == nil else {
-        debugPrint("Skafos Load error: \(error!)")
+        console.error("Skafos load asset error: \(String(describing: error))")
         return
       }
-      
-      if let model = asset.model {
-        self.classifier.model = model
+      guard let model = asset.model else {
+        console.info("No model available in the asset")
+        return
       }
-      
-      debugPrint("Assets downloaded: \(asset)")
+      // Assign model to the classifier class
+      self.classifier.model = model
     }
-
+    
+    /***
+     Listen for push noticiations and load the asset from the recieved payload
+     ***/
     NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.reloadModel(_:)), name: Skafos.Notifications.assetUpdateNotification(assetName), object: nil)
   }
   
@@ -126,16 +127,18 @@ class MainViewController : UIViewController {
   
   @objc func reloadModel(_ notification:Notification) {
     Skafos.load(asset: assetName) { (error, asset) in
+      // Log the asset in the console
+      console.info(asset)
       guard error == nil else {
-        debugPrint("Skafos Load error: \(error!)")
+        console.error("Skafos load asset error: \(String(describing: error))")
         return
       }
-      
-      if let model = asset.model {
-        self.classifier.model = model
+      guard let model = asset.model else {
+        console.info("No model available in the asset")
+        return
       }
-      
-      debugPrint("Assets downloaded: \(asset)")
+      // Assign model to the classifier class
+      self.classifier.model = model
     }
   }
   
