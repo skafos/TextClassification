@@ -165,7 +165,7 @@ class MainViewController : UIViewController {
 
     let prediction = try! classifier.prediction(text: bagOfWords)
     
-    label.text = "Sentiment: \(prediction.stars)"
-    debugPrint("Sentiment: \(prediction.stars), Probability: \(prediction.starsProbability)")
+    label.text = "Sentiment: \(prediction.label)"
+    debugPrint("Sentiment: \(prediction.label), Probability: \(prediction.labelProbability)")
   }
 }
