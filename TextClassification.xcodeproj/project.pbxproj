@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5199CC548AF5F61B294CF278 /* Pods_TextClassification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAD5B27619C3B73F7D2D98F /* Pods_TextClassification.framework */; };
-		D7FA4A4321E3F08B00BC19C9 /* TextClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D7FA4A4221E3F08B00BC19C9 /* TextClassifier.mlmodel */; };
+		B1A3BB432277438400A18474 /* TextClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B1A3BB422277438400A18474 /* TextClassifier.mlmodel */; };
 		D7FA4A4521E3F0BC00BC19C9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FA4A4421E3F0BC00BC19C9 /* MainViewController.swift */; };
 		D7FF33DC21E3E8AB00916CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FF33DB21E3E8AB00916CBD /* AppDelegate.swift */; };
 		D7FF33E121E3E8AC00916CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7FF33E021E3E8AC00916CBD /* Assets.xcassets */; };
@@ -18,8 +18,8 @@
 /* Begin PBXFileReference section */
 		2F28069D069B8DA181837376 /* Pods-TextClassification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextClassification.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextClassification/Pods-TextClassification.release.xcconfig"; sourceTree = "<group>"; };
 		9EAD5B27619C3B73F7D2D98F /* Pods_TextClassification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextClassification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A3BB422277438400A18474 /* TextClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TextClassifier.mlmodel; sourceTree = "<group>"; };
 		D7FA4A4121E3EFD500BC19C9 /* TextClassification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextClassification.entitlements; sourceTree = "<group>"; };
-		D7FA4A4221E3F08B00BC19C9 /* TextClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TextClassifier.mlmodel; sourceTree = "<group>"; };
 		D7FA4A4421E3F0BC00BC19C9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D7FF33D821E3E8AB00916CBD /* TextClassification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextClassification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FF33DB21E3E8AB00916CBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		39E2E4F121E7C96B0028E41F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D7FA4A4221E3F08B00BC19C9 /* TextClassifier.mlmodel */,
+				B1A3BB422277438400A18474 /* TextClassifier.mlmodel */,
 				D7FF33E021E3E8AC00916CBD /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -236,8 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7FA4A4521E3F0BC00BC19C9 /* MainViewController.swift in Sources */,
+				B1A3BB432277438400A18474 /* TextClassifier.mlmodel in Sources */,
 				D7FF33DC21E3E8AB00916CBD /* AppDelegate.swift in Sources */,
-				D7FA4A4321E3F08B00BC19C9 /* TextClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
