@@ -42,7 +42,7 @@ class MainViewController : UIViewController {
 
   private lazy var label_explain:UILabel = {
     let label           = UILabel()
-    label.text          = "Enter into the textbox any word or phrase to see how positive or negative it is (sentiment). \n\nA sentiment score of 5 is positive (e.g. awesome, great, I loved it!) and a sentiment score of 1 is negative (e.g. horrible, smelly, I hated it!)"
+    label.text          = "Enter some text into the textbox above to get a sentiment, spam, or topic classification from the model."
     label.font          = label.font.withSize(14)
     label.textAlignment = .left
     label.numberOfLines = 0
@@ -165,7 +165,7 @@ class MainViewController : UIViewController {
 
     let prediction = try! classifier.prediction(text: bagOfWords)
     
-    label.text = "Sentiment: \(prediction.label)"
-    debugPrint("Sentiment: \(prediction.label), Probability: \(prediction.labelProbability)")
+    label.text = "Classification: \(prediction.label)"
+    debugPrint("Classification: \(prediction.label), Probability: \(prediction.labelProbability)")
   }
 }
